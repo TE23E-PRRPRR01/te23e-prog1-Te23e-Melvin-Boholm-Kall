@@ -13,5 +13,5 @@ if (förnamn == "Melvin")
 
 if (efternamn == "boholm käll")
 {
-    Console.WriteLine
+    Console.WriteLine("Vackert efternamn!")
 }
