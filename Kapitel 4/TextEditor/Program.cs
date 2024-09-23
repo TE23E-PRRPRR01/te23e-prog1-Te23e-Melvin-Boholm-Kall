@@ -10,7 +10,8 @@ Console.OutputEncoding = System.Text.Encoding.Unicode;
 while(true)
 {
 
-    Console.WriteLine($"""
+    Console.Write($"""
+    
     1. Skriv till fil
     2. Läs från fil
     3. Avsluta programmet
@@ -22,9 +23,9 @@ while(true)
   if (val == "1")
   {
     Console.Clear();
-    Console.WriteLine("Skriv en text: ");
+    Console.Write("Skriv en text: ");
     string text = Console.ReadLine();
-    Console.WriteLine("Vad ska filen heta?");
+    Console.Write("Vad ska filen heta?");
     string namn = Console.ReadLine();
      File.WriteAllText($"{namn}.txt", text);
   }
@@ -34,13 +35,15 @@ while(true)
     try
     {
         Console.Clear();
-        Console.WriteLine("Namn på filen: ");
+        Console.Write("Namn på filen: ");
         string namn = Console.ReadLine();
         string text = File.ReadAllText($"{namn}.txt");
-        Console.WriteLine($"{text}"); 
+        Console.Write($"{text}"); 
     }
     catch (Exception ex)
     {
+        System.Console.Write("Finns ingen fil vid det namnet.");
+        System.Threading.Thread.Sleep(2000);
         Console.Clear();
     }
   }
@@ -53,6 +56,8 @@ while(true)
   else
   {
     Console.WriteLine("Försök igen");
+    System.Threading.Thread.Sleep(2000);
+    Console.Clear();
   }
 
 }
