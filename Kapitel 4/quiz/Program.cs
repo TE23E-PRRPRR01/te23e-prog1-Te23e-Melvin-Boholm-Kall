@@ -8,12 +8,6 @@ string namn = Console.ReadLine().ToLower();
 
 int poäng = 0;
 
-if (namn == "elias")
-{
-    Console.WriteLine("Retard");
-    Environment.Exit(0);
-}
-
 Console.WriteLine($"Välkommen {namn}!\n");
 Thread.Sleep(1000);
 
